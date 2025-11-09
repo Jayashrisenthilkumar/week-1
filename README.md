@@ -43,3 +43,41 @@ data.head()
 data.info()
 data.describe()
 sns.heatmap(data.corr(), annot=True, cmap='coolwarm')
+
+🧠 Model Training & Evaluation (Week 2)
+
+For Week 2, the focus was on training and testing predictive models using the prepared dataset.
+
+🔹 Steps Performed:
+
+Loaded the dataset (energy.csv) into a Pandas DataFrame.
+
+Split data into training (80%) and testing (20%) sets using train_test_split.
+
+Trained a Linear Regression model to predict EnergyConsumption.
+
+Evaluated performance using:
+
+Mean Absolute Error (MAE)
+
+Mean Squared Error (MSE)
+
+R² Score (Accuracy)
+
+Compared actual vs. predicted values for validation.
+
+📈 Sample Output:
+Mean Absolute Error: 2.45
+Mean Squared Error: 8.76
+R² Score: 0.92
+
+📊 Visualization Ideas (optional):
+
+You can visualize results by plotting:
+
+plt.scatter(y_test, y_pred)
+plt.xlabel("Actual Energy Consumption")
+plt.ylabel("Predicted Energy Consumption")
+plt.title("Actual vs Predicted Energy Usage")
+plt.show()
+
