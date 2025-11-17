@@ -1,81 +1,133 @@
 # ⚡ Energy Consumption Prediction
 
 ## 📘 Project Overview
-This project focuses on predicting energy consumption based on environmental factors such as temperature, humidity, light, and CO₂ levels.  
-The goal is to use data science and machine learning techniques to develop a predictive model that estimates energy usage efficiently.
+This project focuses on predicting **energy consumption** using environmental variables such as temperature, humidity, light intensity, and CO₂ levels.  
+The goal is to apply **data science** and **machine learning** techniques to build accurate predictive models and visualize results through an interactive dashboard.
 
 ---
 
 ## 🎯 Objectives
-- Analyze and visualize energy-related data.  
-- Build a **Linear Regression** model to predict energy consumption.  
-- Compare performance with a **Random Forest Regressor**.  
-- Identify the most influential features affecting energy usage.  
-- Perform **advanced EDA**, feature engineering, and test **XGBoost** & **LSTM** models (Week 3).  
-- Develop a **Streamlit dashboard** for interactive visualization (Week 3).
+- Analyze and visualize energy-related data  
+- Build a **Linear Regression model** to predict energy consumption  
+- Train and compare a **Random Forest Regressor**  
+- Identify most influential features  
+- Perform **advanced EDA & feature engineering (Week 3)**  
+- Train advanced models: **XGBoost** and **LSTM**  
+- Create a **Streamlit Dashboard** for interactive visualization  
 
 ---
 
 ## 🧩 Dataset Information
-The dataset is stored in `data/energy.csv`.  
+The dataset is stored in:
 
-| Feature | Description |
-|---------|-------------|
-| Temperature | Room temperature in °C |
-| Humidity | Relative humidity in % |
-| Light | Light intensity (Lux) |
-| CO₂ | Carbon dioxide concentration (ppm) |
-| HumidityRatio | Ratio of humidity to temperature |
-| EnergyConsumption | Energy consumed (kWh) |
+```
+data/energy.csv
+```
+
+### **Features Description**
+
+| Feature            | Description                                  |
+|-------------------|----------------------------------------------|
+| Temperature       | Room temperature (°C)                        |
+| Humidity          | Relative humidity (%)                        |
+| Light             | Light intensity (Lux)                        |
+| CO₂               | Carbon dioxide concentration (ppm)           |
+| HumidityRatio     | Ratio of humidity to temperature             |
+| EnergyConsumption | Energy consumed (kWh)                        |
 
 ---
 
 ## ⚙️ Technologies Used
-- **Python 3**  
+- **Python 3**
 - **Pandas, NumPy** — Data handling  
 - **Matplotlib, Seaborn** — Data visualization  
 - **Scikit-learn** — Machine learning models  
-- **XGBoost** — Advanced tree-based model  
-- **TensorFlow / Keras** — LSTM for time-series prediction  
+- **XGBoost** — Advanced boosting model  
+- **TensorFlow / Keras** — LSTM time-series model  
 - **Streamlit** — Interactive dashboard  
 
 ---
 
-## 📊 Data Exploration
+## 📊 Data Exploration Summary
 
-### Week 1 & 2
-Key commands used for initial EDA:
+### **Week 1 & Week 2**
+Performed initial EDA:
+- `data.head()`, `data.info()`, `data.describe()`
+- Plotted **distributions** of numerical features  
+- Created **heatmap** to understand correlations  
+- Built **Linear Regression** & **Random Forest** models  
+- Compared performance and extracted feature importances  
 
-```python
-data.head()
-data.info()
-data.describe()
-sns.heatmap(data.corr(), annot=True, cmap='coolwarm')
+---
 
-*Visualized distributions of numerical features
+## 🚀 Week 3 Enhancements
 
-*Plotted correlation heatmaps
+### **🔍 Advanced EDA**
+- Detailed **univariate & bivariate** analysis  
+- Time-series line plots to identify energy trends  
+- Correlation insights with engineered features  
 
-*Built Linear Regression and Random Forest models
+### **🛠 Feature Engineering**
+Added new time-based & rolling features:
 
-Week 3 Additions...
+- `hour`  
+- `weekday`  
+- `is_weekend`  
+- Rolling means:  
+  - `rolling_3h`  
+  - `rolling_24h`  
+- Lag features:  
+  - `lag_1`  
+  - `lag_24`  
 
-Detailed univariate and bivariate analysis
+### **🤖 Advanced Models**
+- **XGBoost Regressor** for boosted tree predictions  
+- **LSTM Neural Network** for time-series forecasting  
 
-Time-series plots to understand energy trends
+### **📊 Streamlit Dashboard**
+A simple interactive dashboard to:
+- Visualize energy trends  
+- Display model predictions  
+- Explore engineered features  
 
-Feature engineering:
+---
 
-hour
+## 📁 Project Structure
+```
+week-1/
+│── data/
+│   ├── energy.csv
+│   ├── energy_with_timestamp.csv
+│   └── energy_features.csv
+│
+│── models/
+│   ├── xgb_model.pkl
+│   └── lstm_model.h5
+│
+│── notebooks/
+│   ├── Energy_Prediction.ipynb
+│   ├── week2_model_training.ipynb
+│   └── week3_energy_final.ipynb
+│
+│── scripts/
+│── app.py
+│── requirements.txt
+│── README.md
+```
 
-weekday
+---
 
-is_weekend
+## 🏁 Final Notes
+This project demonstrates how **energy consumption** can be predicted using environmental conditions.  
+It shows the full process from **data cleaning → EDA → feature engineering → model training → evaluation → dashboard deployment**.
 
-Rolling averages (rolling_3h_mean, rolling_24h_mean)
+Future improvements could include:
+- Hyperparameter tuning  
+- Time-series cross-validation  
+- Deploying the model with an API  
 
-Lag features (lag_1, lag_24)
+---
 
-Advanced models: XGBoost and LSTM for improved predictions
+✨ **Author:** Jayashri S
+🌟 *Energy Prediction — Machine Learning Analytics Project*
 
-Interactive Streamlit dashboard to visualize trends and predictions
